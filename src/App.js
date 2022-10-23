@@ -1,3 +1,4 @@
+import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import HolaMundo from './components/HolaMundo';
@@ -5,6 +6,9 @@ import AdiosMundo from './components/AdiosMundo';
 import Saludar from './components/Saludar';
 
 function App() {
+  const [stateCar, setStateCar] = useState(false);
+
+
 
   const userName = "Carlos Garcia";
   const edad = 40;
@@ -19,9 +23,16 @@ function App() {
     alert(`Hola ${nombre}`);
   }
 
+  const encenderApagar = () => {
+    //setStateCar(!stateCar);
+    setStateCar(prevValue => !prevValue );
+  }
+
   return (
     <div className="App">
       <header className="App-header">
+        <h3>El coche esta: {stateCar ? "Encendido" : "Apagado"}</h3>
+        <button onClick={encenderApagar}>{!stateCar ? "Encender" : "Apagar"}</button>
         <img src={logo} className="App-logo" alt="logo" />
         <HolaMundo/>
         <AdiosMundo/>
