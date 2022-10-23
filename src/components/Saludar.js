@@ -3,6 +3,9 @@ import React from 'react';
 const Saludar = (props) => {
 
     const {userInfo, saludarFn} = props;
+
+    
+
     console.log(props);
     console.log(userInfo);
 
