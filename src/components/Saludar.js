@@ -17,6 +17,7 @@ const Saludar = (props) => {
     return (
         <div>
             <h2>Hola {nombre}, tiene {edad} años</h2>
+            <button onClick={() => props.saludarFn(nombre)}>Saludar</button>
         </div>
     );
 };
